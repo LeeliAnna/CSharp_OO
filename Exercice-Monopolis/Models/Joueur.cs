@@ -1,11 +1,10 @@
-﻿using Exercice_Monopolis.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercice_Monopolis
+namespace Exercice_Monopolis.Models
 {
     //3.Créer une classe « Joueur » qui devra implémenter
     //◼ Les variables membres:
