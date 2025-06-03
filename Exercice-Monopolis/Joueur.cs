@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exercice_Monopolis.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Exercice_Monopolis
     //◼ pion(Pions)
     //◼ position(int) – Position sur le plateau de jeu
     //◼ La méthode publique:
-    //◼ bool Avancer() – Le joueur lance deux dés et avance de la quantité de cases équivalant au total des dés.Indique en retour si le joueur a obtenu un double.
+    //◼ bool Avancer() – Le joueur lance deux dés et avance de la quantité de cases équivalant au total des dés. Indique en retour si le joueur a obtenu un double.
     internal class Joueur
     {
         public string nom;
@@ -20,9 +21,19 @@ namespace Exercice_Monopolis
         public int position;
 
 
-        public static bool Avancer()
+        public bool Avancer()
         {
-            
+            int[] jetDe = De.Lancer(2);
+            for (int i = 0; i < jetDe.Length; i++)
+            {
+
+                position += jetDe[i];
+                if (i != jetDe.Length - 1 && jetDe[i] == jetDe[i + 1])
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

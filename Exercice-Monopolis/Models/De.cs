@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace Exercice_Monopolis.Models
 {
     //2.Créer une classe statique « De » qui devra implémenter
@@ -15,13 +16,13 @@ namespace Exercice_Monopolis.Models
     //◼ rng(Random)
     //◼ La méthode publique:
     //◼ int[] Lancer(int nbDes) – Permet de lancer des dés, nbDes indiquant le nombre de dés. La valeur de retour correspond aux résultats de tout les dés.
-    internal class De
+    internal static class De
     {
-        public int valeurMin;
-        public int valeurMax;
-        public static Random rnd;
+        public static int valeurMin;
+        public static int valeurMax;
+        public static Random rnd = new Random();
 
-        public int[] Lancer(int nbDes)
+        public static int[] Lancer(int nbDes)
         {
             int[] tous = new int[nbDes];
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercice_Monopolis.Models
 {
-    public enum MyEnum
+    public enum Pions
     {
         Voiture,
         Cuirasse,
