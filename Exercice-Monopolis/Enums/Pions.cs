@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercice_Monopolis.Models
+namespace Exercice_Monopolis.Enums
 {
     public enum Pions
     {
