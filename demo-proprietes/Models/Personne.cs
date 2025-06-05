@@ -29,7 +29,7 @@ namespace demo_proprietes.Models
             }
         }
 
-        private string _prenom;
+        //private string _prenom;
 
         //public string Prenom
         //{
