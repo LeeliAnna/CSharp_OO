@@ -1,5 +1,8 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Reflection.Metadata;
 using System.Text;
+using System.Xml.Linq;
 using Exercice_Monopolis.Enums;
 using Exercice_Monopolis.Models;
 
@@ -9,16 +12,6 @@ namespace Exercice_Monopolis
     {
         static void Main(string[] args)
         {
-            //1.Modifier la classe statique « De » pour que ses variables soient privées et qui devra implémenter
-            //Les propriétés publiques:
-            //◼ ValeurMin(int) – doit être supérieur à 0 et si la valeur est supérieur ou égale à la variable valeurMax, alors augmenter la valeurMax à la même valeur + 1
-            //◼ ValeurMax(int) – doit être supérieur à 1 et si la valeur est inférieur ou égale à la variable valeurMin, alors la diminue à la même valeur – 1
-
-            //2.Modifier la classe « Joueur » pour que ses variables soient remplacées par des auto - propriétés(nom pion), sauf pour la variable « position » et implémenter 
-            //◼ Les propriétés publiques:
-            //           1. ◼ Position(int) – Lecture seule
-
-            //    2. ◼ Solde(int) – Lecture seule(argent)
             Joueur joueur = new Joueur() 
             {
                 Nom = "Luc",

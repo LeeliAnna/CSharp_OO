@@ -7,24 +7,24 @@ using Exercice_Monopolis.Enums;
 
 namespace Exercice_Monopolis.Models
 {
-    //3.Créer une classe « Joueur » qui devra implémenter
-    //◼ Les variables membres:
-    //◼ nom(string)
-    //◼ pion(Pions)
-    //◼ position(int) – Position sur le plateau de jeu
-    //◼ La méthode publique:
-    //◼ bool Avancer() – Le joueur lance deux dés et avance de la quantité de cases équivalant au total des dés. Indique en retour si le joueur a obtenu un double.
+    //1.Modifier la classe « Joueur » pour qu’elle implémente
+    //◼ La variable privée:
+    //◼ _proprietes(List<CasePropriete>)
 
-    //2.Modifier la classe « Joueur » pour que ses variables soient remplacées par des auto - propriétés(nom pion), sauf pour la variable « position » et implémenter 
-    //◼ Les propriétés publiques:
-    //           1. ◼ Position(int) – Lecture seule
-
-    //    2. ◼ Solde(int) – Lecture seule(argent)
+    //◼ La propriété publique:
+    //◼ Proprietes(CasePropriete[]) – Lecture seule
+    //◼ Un constructeur qui initialise les propriétés : Nom, Pion par des paramètres; Solde à 1500, Position à 0 et initialiser une liste vide pour Proprietes.
+    //◼ Les méthodes publiques:
+    //◼ void EtrePaye(int montant) – Permet d’ajouter un montant au Solde du Joueur
+    //◼ void Payer(int montant) – Permet de diminuer le solde du Joueur d’un montant renseigné en paramètre.Le Solde ne peut pas atteindre une valeur en dessous de 0.
+    //◼ void AjouterPropriete(propriete casePropriete) – Permet d’ajouter la propriété dans la liste Proprietes seulement si celle-ci a comme propriétaire le joueur.
     internal class Joueur
     {
         public string Nom { get; set; }
         public Pions Pion { get; set; }
         private int _position = 0;
+        private int _solde;
+        private List<CasePropriete> _properietes;
 
         public int Position
         {
@@ -32,14 +32,28 @@ namespace Exercice_Monopolis.Models
             private set { _position = value; }
         }
 
-        private int _solde;
-
         public int Solde
         {
             get { return _solde; }
-            private set { _solde = value; }
+            private set 
+            { 
+                _solde = value;
+                
+            }
         }
 
+        internal List<CasePropriete> Properietes
+        {
+            get
+            {
+                return _properietes;
+            }
+
+            private set
+            {
+                _properietes = value;
+            }
+        }
 
 
 
@@ -57,6 +71,11 @@ namespace Exercice_Monopolis.Models
                 }
             }
             return false;
+        }
+
+        public void Acheter(int prix)
+        {
+            Solde -= prix;
         }
 
     }
