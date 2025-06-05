@@ -26,11 +26,11 @@ namespace Correction_Monopolis
 
             Joueur j1 = new Joueur() 
             { 
-                nom = userName, 
-                pion = choice
+                Nom = userName, 
+                Pion = choice
             };
 
-            Console.WriteLine($"Le joueur {j1.nom} avec le pion {j1.pion} se trouve à la case {j1.position}. ");
+            Console.WriteLine($"Le joueur {j1.Nom} avec le pion {j1.Pion} se trouve à la case {j1.Position}. ");
 
             bool isDouble = j1.Avancer();
 
@@ -39,7 +39,7 @@ namespace Correction_Monopolis
                 Console.WriteLine("Super! Un double!");
             }
 
-            Console.WriteLine($"Le joueur {j1.nom} avec le pion {j1.pion} se trouve à la case {j1.position}. ");
+            Console.WriteLine($"Le joueur {j1.Nom} avec le pion {j1.Pion} se trouve à la case {j1.Position}. ");
         }
     }
 }

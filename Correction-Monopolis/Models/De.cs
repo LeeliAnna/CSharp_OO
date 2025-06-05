@@ -21,7 +21,8 @@ namespace Correction_Monopolis.Models
                     _valeurMin = value;
                     if (value >= ValeurMax)
                     {
-                        ValeurMax = _valeurMin + 1;
+                        ValeurMax = value + 1;
+                        //ValeurMax = _valeurMin + 1;
 
                     }
                 }
@@ -44,7 +45,8 @@ namespace Correction_Monopolis.Models
                     _valeurMax = value;
                     if (value <= ValeurMin) 
                     {
-                        ValeurMin = ValeurMax - 1; 
+                        ValeurMin = value - 1;
+                        //ValeurMin = _valeurMax - 1;
                     }
                 }
             }
