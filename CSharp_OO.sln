@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercices supp et récap", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo-recap-fondement", "Exo-recap-fondement\Exo-recap-fondement.csproj", "{F638321B-A846-4A28-894D-9128374711D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo-constructeur", "Demo-constructeur\Demo-constructeur.csproj", "{343A9F20-63C6-46F5-8FA1-DAC7C0D52C9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{F638321B-A846-4A28-894D-9128374711D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F638321B-A846-4A28-894D-9128374711D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F638321B-A846-4A28-894D-9128374711D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343A9F20-63C6-46F5-8FA1-DAC7C0D52C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343A9F20-63C6-46F5-8FA1-DAC7C0D52C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343A9F20-63C6-46F5-8FA1-DAC7C0D52C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343A9F20-63C6-46F5-8FA1-DAC7C0D52C9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{9B267F65-D25A-4431-B5F8-2320A6043330} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{130DE30C-4574-4851-A09C-483B97413E80} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F638321B-A846-4A28-894D-9128374711D8} = {ADC5FF33-40E2-43E8-BD1D-F308C1279EF2}
+		{343A9F20-63C6-46F5-8FA1-DAC7C0D52C9B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4BFF87A-D220-4F15-8A90-2EB96BC70E3E}
