@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo-encapsulation", "demo-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo-proprietes", "demo-proprietes\demo-proprietes.csproj", "{130DE30C-4574-4851-A09C-483B97413E80}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercices supp et récap", "Exercices supp et récap", "{ADC5FF33-40E2-43E8-BD1D-F308C1279EF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo-recap-fondement", "Exo-recap-fondement\Exo-recap-fondement.csproj", "{F638321B-A846-4A28-894D-9128374711D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,7 @@ Global
 		{1AA1DE19-02BE-44FE-85B2-BE83C0EE6E5C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{9B267F65-D25A-4431-B5F8-2320A6043330} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{130DE30C-4574-4851-A09C-483B97413E80} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F638321B-A846-4A28-894D-9128374711D8} = {ADC5FF33-40E2-43E8-BD1D-F308C1279EF2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4BFF87A-D220-4F15-8A90-2EB96BC70E3E}
