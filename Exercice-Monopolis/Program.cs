@@ -12,13 +12,19 @@ namespace Exercice_Monopolis
     {
         static void Main(string[] args)
         {
-            Joueur joueur = new Joueur() 
-            {
-                Nom = "Luc",
-                Pion = Pions.DeACoudre
-            };
+            //Joueur joueur = new Joueur() 
+            //{
+            //    Nom = "Luc",
+            //    Pion = Pions.DeACoudre
+            //};
 
-            
+            Joueur joueur = new Joueur("Luc", Pions.DeACoudre);
+            //{
+                //Nom = "Luc",
+                //Pion = Pions.DeACoudre
+            //};
+
+
             Console.WriteLine($"Bonjour, je suis {joueur.Nom}, je joue avec le pion {joueur.Pion} et je me trouve en position {joueur.Position}.");
 
             bool estDouble = joueur.Avancer();
@@ -29,7 +35,24 @@ namespace Exercice_Monopolis
             }
 
             Console.WriteLine($"Bonjour, je suis {joueur.Nom}, je joue avec le pion {joueur.Pion} et je me trouve en position {joueur.Position} après avoir avancer avec les De.");
-            
+
+            // Enum contenant un string
+            ////string laCouleur = "BleuCiel";
+            //Couleurs maCouleur = (Couleurs)Enum.Parse(typeof(Couleurs), laCouleur);
+            //Console.WriteLine(maCouleur);
+            //Console.WriteLine((int)maCouleur);
+
+            //// Attention à l'enum contenant un INT
+            //string laCouleur = "BleuCiel";
+            //int couleurBleuCiel = 1;
+            //Couleurs maCouleur = (Couleurs)couleurBleuCiel;
+            //Console.WriteLine(maCouleur);
+            //Console.WriteLine((int)maCouleur);
+
+            //Joueur joueur1 = new Joueur();
+            //CasePropriete maCase = new CasePropriete();
+            //joueur1.Properietes = maCase;
+
         }
     }
 }

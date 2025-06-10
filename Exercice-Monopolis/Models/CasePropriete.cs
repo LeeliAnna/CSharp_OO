@@ -10,13 +10,14 @@ namespace Exercice_Monopolis.Models
     internal class CasePropriete
     {
 
-        private string _nom;
+        #region Variables et propriétés
+        private string? _nom;
         private Couleurs _couleurs;
         private int _prix;
         private bool _estHypotequee;
-        private Joueur _proprietaire;
+        private Joueur? _proprietaire;
 
-        public string Nom 
+        public string? Nom
         {
             get { return _nom; }
             private set { _nom = value; }
@@ -37,7 +38,10 @@ namespace Exercice_Monopolis.Models
 
             private set
             {
-                _prix = value;
+                if (value > 0) 
+                { 
+                    _prix = value;
+                }
             }
         }
 
@@ -54,7 +58,7 @@ namespace Exercice_Monopolis.Models
             }
         }
 
-        internal Joueur Proprietaire
+        internal Joueur? Proprietaire
         {
             get
             {
@@ -65,7 +69,8 @@ namespace Exercice_Monopolis.Models
             {
                 _proprietaire = value;
             }
-        }
+        } 
+        #endregion
 
         public CasePropriete() { }
 
@@ -80,10 +85,14 @@ namespace Exercice_Monopolis.Models
 
         public void Acheter(Joueur acheteur)
         {
-            if (acheteur.Solde < Prix)
+            int soldeFinal = acheteur.Solde - Prix;
+            if (acheteur is not null && acheteur.Solde >= Prix && Proprietaire is null)
             {
-                Proprietaire = acheteur;
-                acheteur.Acheter(Prix);
+                acheteur.Payer(Prix);
+                if(soldeFinal == acheteur.Solde)
+                {
+                    Proprietaire = acheteur;
+                }
             }
 
         }

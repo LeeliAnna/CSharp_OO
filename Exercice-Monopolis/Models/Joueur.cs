@@ -20,7 +20,8 @@ namespace Exercice_Monopolis.Models
     //◼ void AjouterPropriete(propriete casePropriete) – Permet d’ajouter la propriété dans la liste Proprietes seulement si celle-ci a comme propriétaire le joueur.
     internal class Joueur
     {
-        public string Nom { get; set; }
+        #region Variable membres et proprietes
+        public string? Nom { get; set; }
         public Pions Pion { get; set; }
         private int _position = 0;
         private int _solde;
@@ -35,13 +36,16 @@ namespace Exercice_Monopolis.Models
         public int Solde
         {
             get { return _solde; }
-            private set 
-            { 
+            private set
+            {
                 _solde = value;
-                
+
             }
         }
 
+        /// <summary>
+        /// Dans ce cas-ci, un VRAI readOnly empèche de mettre à zero la liste de propriete du joueur. 
+        /// </summary>
         internal List<CasePropriete> Properietes
         {
             get
@@ -54,8 +58,23 @@ namespace Exercice_Monopolis.Models
                 _properietes = value;
             }
         }
+        #endregion
 
+        #region Constructeurs
+        //public Joueur()
+        //{
 
+        //}
+
+        public Joueur(string nom, Pions pion)
+        {
+            Nom = nom;
+            Pion = pion;
+            Solde = 1500;
+            Position = 0;
+            Properietes = new List<CasePropriete>();            
+        } 
+        #endregion
 
         public bool Avancer()
         {
@@ -73,9 +92,28 @@ namespace Exercice_Monopolis.Models
             return false;
         }
 
-        public void Acheter(int prix)
+        public void EtrePaye(int montant)
         {
-            Solde -= prix;
+            if (montant > 0)
+            {
+                Solde += montant;
+            }
+        }
+
+        public void Payer(int montant)
+        {
+            if (Solde >= montant && montant > 0)
+            {
+                Solde -= montant;
+            }
+        }
+
+        public void AjouterPtopriete(CasePropriete propriete)
+        {
+            if (propriete is not null && propriete.Proprietaire == this )
+            {
+                Properietes.Add(propriete);
+            }
         }
 
     }
