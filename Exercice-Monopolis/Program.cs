@@ -104,6 +104,10 @@ namespace Exercice_Monopolis
                 while (estDouble)
                 {
                     Console.WriteLine("Super un double!");
+                    //Ajouter de l'argent
+                    //joueurCourant.EtrePaye(200);
+                    //joueurCourant = joueurCourant + 200;
+                    //joueurCourant += 200;
                     Console.WriteLine($"Bonjour, je suis {joueurCourant.Nom}, je joue avec le pion {joueurCourant.Pion} et je me trouve en position {caseCourrante.Nom} après avoir avancer avec les Dés.");
                     estDouble = joueurCourant.Avancer();
                     caseCourrante = monopily[joueurCourant.Position];

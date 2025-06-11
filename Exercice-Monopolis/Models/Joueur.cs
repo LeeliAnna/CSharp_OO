@@ -73,9 +73,10 @@ namespace Exercice_Monopolis.Models
             Solde = 1500;
             Position = 0;
             Properietes = new List<CasePropriete>();            
-        } 
+        }
         #endregion
 
+        #region Méthodes
         public bool Avancer()
         {
             int[] jetDe = De.Lancer(2);
@@ -110,11 +111,34 @@ namespace Exercice_Monopolis.Models
 
         public void AjouterPtopriete(CasePropriete propriete)
         {
-            if (propriete is not null && propriete.Proprietaire == this )
+            if (propriete is not null && propriete.Proprietaire == this)
             {
                 Properietes.Add(propriete);
             }
         }
+        #endregion
+
+        #region Surcharge
+        /// <summary>
+        /// Surcharge l'operateur + et permet d'additionner une somme d'argent lorsqu'on utilise + sur joueur
+        /// </summary>
+        /// <param name="left">le parametre à gauche ici le joueur</param>
+        /// <param name="right">le parametre à droite ici le montant a ajouter</param>
+        /// <returns></returns>
+        public static Joueur operator +(Joueur left, int right)
+        {
+            left.EtrePaye(right);
+            return left;
+        }
+        
+        public static List<CasePropriete> operator +(Joueur left, CasePropriete right)
+        {
+            right.Acheter(left);
+            left.AjouterPtopriete(right);
+            return left.Properietes;
+        } 
+
+        #endregion
 
     }
 }
