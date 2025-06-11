@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Exercice_Monopolis.Models
 {
-    internal class CasePropriete
+    internal class CasePropriete : Case
     {
 
         #region Variables et propriétés
-        private string? _nom;
+        //private string? _nom;
         private Couleurs _couleurs;
         private int _prix;
         private bool _estHypotequee;
         private Joueur? _proprietaire;
 
-        public string? Nom
-        {
-            get { return _nom; }
-            private set { _nom = value; }
-        }
+        //public string? Nom
+        //{
+        //    get { return _nom; }
+        //    private set { _nom = value; }
+        //}
 
         public Couleurs Couleurs
         {
@@ -72,11 +72,11 @@ namespace Exercice_Monopolis.Models
         } 
         #endregion
 
-        public CasePropriete() { }
+        //public CasePropriete() { }
 
-        public CasePropriete(string paramNom, Couleurs paramCouleur, int paramPrix)
+        public CasePropriete(string paramNom, Couleurs paramCouleur, int paramPrix) : base(paramNom)
         {
-            Nom = paramNom;
+            //Nom = paramNom;
             Couleurs = paramCouleur;
             Prix = paramPrix;
             EstHypotequee = false;
