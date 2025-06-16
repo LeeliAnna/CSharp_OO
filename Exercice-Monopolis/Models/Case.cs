@@ -6,19 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercice_Monopolis.Models
 {
-    /*1. Créer la classe « Case » qui devra implémenter
-    ◼ La variable membre privée :
-    ◼ _visiteurs (List<Joueur>)
-    ◼ Les propriétés publiques :
-    ◼ Nom (string) – Lecture seule
-    ◼ Visiteurs (Joueur[ ]) – Lecture seule
-    ◼ Un constructeur qui initialise : la propriété « Nom » à l’aide d’un paramètre et initialise une List<Joueur> vide pour la variable _visiteurs.
-      1. Faire hériter la classe « Case » de la classe « CasePropriete »
-      ◼ Enlever les membres communs de la classe parent.
-     * 
-     * 
-     */
-    internal class Case
+    internal abstract class Case
     {
         private List<Joueur> _visiteurs;
 
@@ -41,12 +29,6 @@ namespace Exercice_Monopolis.Models
             _visiteurs = new List<Joueur>();
         }
 
-        /*
-        ◼ Les méthodes publiques :
-            ◼ void AjouterVisiteur (Joueur visiteur) – Permet de regrouper les visiteurs d’une même case.
-            ◼ void RetirerVisiteur (Joueur visiteur) – Permet de retirer un joueur de la liste des visiteurs de cette case.
-        */
-
         public void AJouterVisiteur(Joueur visiteur) 
         {
             if (_visiteurs.Contains(visiteur)) return; //Message d'erreur
@@ -57,6 +39,8 @@ namespace Exercice_Monopolis.Models
         {
             if (!_visiteurs.Remove(visiteur)) return; //Message exception
         }
+
+        public abstract void Activer(Joueur visiteur);
 
     }
 }

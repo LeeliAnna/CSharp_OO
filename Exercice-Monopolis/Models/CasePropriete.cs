@@ -83,7 +83,7 @@ namespace Exercice_Monopolis.Models
             Proprietaire = null;
         }
 
-        public void Acheter(Joueur acheteur)
+        private void Acheter(Joueur acheteur)
         {
             int soldeFinal = acheteur.Solde - Prix;
             if (acheteur is not null && acheteur.Solde >= Prix && Proprietaire is null)
@@ -97,6 +97,20 @@ namespace Exercice_Monopolis.Models
 
         }
 
+        private void Sejourner(Joueur visiteur)
+        {
+            visiteur.Payer((Prix / 4));
+        }
 
+        public override void Activer(Joueur visiteur)
+        {
+            if (Proprietaire is null) 
+            {
+                Acheter(visiteur);
+            }else
+            {
+                Sejourner(visiteur);
+            }
+        }
     }
 }

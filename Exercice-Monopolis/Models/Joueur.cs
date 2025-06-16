@@ -131,12 +131,12 @@ namespace Exercice_Monopolis.Models
             return left;
         }
         
-        public static List<CasePropriete> operator +(Joueur left, CasePropriete right)
-        {
-            right.Acheter(left);
-            left.AjouterPtopriete(right);
-            return left.Properietes;
-        } 
+        //public static List<CasePropriete> operator +(Joueur left, CasePropriete right)
+        //{
+        //    right.Acheter(left);
+        //    left.AjouterPtopriete(right);
+        //    return left.Properietes;
+        //} 
 
         #endregion
 

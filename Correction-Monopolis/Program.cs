@@ -102,7 +102,9 @@ namespace Correction_Monopolis
                 {
                     caseProp = (CasePropriete)caseCourrante;
                     Console.WriteLine($"C'est une propriété, appatenant à " +
-                        $"{((caseProp.Proprietaire is null) ? "personne" : $"{caseProp.Proprietaire.Nom} ({caseProp.Proprietaire.Pion})")}.");
+                        $"{
+                            ((caseProp.Proprietaire is null) ? "personne" : $"{caseProp.Proprietaire.Nom} ({caseProp.Proprietaire.Pion})")
+                        }.");
                 }
                 //Fin traitement
 

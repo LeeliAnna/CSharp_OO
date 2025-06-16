@@ -15,7 +15,7 @@ namespace Exercice_Monopolis
             #region Initialisation du plateau
             Case[] cases =
             {
-                new Case("Départ"),
+                //new Case("Départ"),
 
                 new CasePropriete("Patio", Couleurs.Marron, 20),
                 new CasePropriete("Accueil", Couleurs.Marron, 23),
@@ -23,7 +23,7 @@ namespace Exercice_Monopolis
                 new CasePropriete("Ascenceur Droit", Couleurs.BleuCiel, 26),
                 new CasePropriete("Toilette RDC", Couleurs.BleuCiel, 30),
 
-                new Case("Prison"),
+                //new Case("Prison"),
 
                 new CasePropriete("Couloir 4ième étage", Couleurs.Violet, 32),
                 new CasePropriete("Couloir 5ième étage", Couleurs.Violet, 32),
@@ -32,7 +32,7 @@ namespace Exercice_Monopolis
                 new CasePropriete("Classe des WEB", Couleurs.Orange, 42),
                 new CasePropriete("Classe des Games", Couleurs.Orange, 48),
 
-                new Case("Parking Gratuit"),
+                //new Case("Parking Gratuit"),
 
                 new CasePropriete("Bureau Sonia", Couleurs.Bleu, 56),
                 new CasePropriete("Bureau Nicole", Couleurs.Bleu, 56),
@@ -102,8 +102,18 @@ namespace Exercice_Monopolis
                 //Traitement du tour
                 Console.WriteLine($"Bonjour, je suis {joueurCourant.Nom}, je joue avec le pion {joueurCourant.Pion} et je me trouve en position {caseCourrante.Nom}.");
 
+                CasePropriete caseProp;
+                if (caseCourrante is CasePropriete)
+                {
+                    caseProp = (CasePropriete)caseCourrante;
+                    Console.WriteLine($"C'est une propriété, appatenant à " +
+                        $"{((caseProp.Proprietaire is null) ? "personne" : $"{caseProp.Proprietaire.Nom} ({caseProp.Proprietaire.Pion})")}.");
+                }
+
                 bool estDouble = joueurCourant.Avancer();
+                caseCourrante.RetirerVisiteur(joueurCourant);
                 caseCourrante = monopily[joueurCourant.Position];
+                caseCourrante.AJouterVisiteur(joueurCourant);
 
                 while (estDouble)
                 {
@@ -113,12 +123,26 @@ namespace Exercice_Monopolis
                     //joueurCourant = joueurCourant + 200;
                     //joueurCourant += 200;
                     Console.WriteLine($"Bonjour, je suis {joueurCourant.Nom}, je joue avec le pion {joueurCourant.Pion} et je me trouve en position {caseCourrante.Nom} après avoir avancer avec les Dés.");
+                    if (caseCourrante is CasePropriete)
+                    {
+                        caseProp = (CasePropriete)caseCourrante;
+                        Console.WriteLine($"C'est une propriété, appatenant à " +
+                            $"{((caseProp.Proprietaire is null) ? "personne" : $"{caseProp.Proprietaire.Nom} ({caseProp.Proprietaire.Pion})")}.");
+                    }
                     estDouble = joueurCourant.Avancer();
+                    caseCourrante.RetirerVisiteur(joueurCourant);
                     caseCourrante = monopily[joueurCourant.Position];
+                    caseCourrante.AJouterVisiteur(joueurCourant);
                 }
 
                 Console.WriteLine($"Bonjour, je suis {joueurCourant.Nom}, je joue avec le pion {joueurCourant.Pion} et je me trouve en position {caseCourrante.Nom} après avoir avancer avec les Dés.");
-
+                if (caseCourrante is CasePropriete)
+                {
+                    caseProp = (CasePropriete)caseCourrante;
+                    Console.WriteLine($"C'est une propriété, appatenant à " +
+                        $"{((caseProp.Proprietaire is null) ? "personne" : $"{caseProp.Proprietaire.Nom} ({caseProp.Proprietaire.Pion})")}.");
+                }
+                // Fin traitement
                 tourJoueur++;
             }
 
