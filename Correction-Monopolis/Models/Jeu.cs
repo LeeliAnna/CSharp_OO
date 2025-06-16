@@ -1,27 +1,29 @@
-﻿using Exercice_Monopolis.Enums;
+﻿using Correction_Monopolis.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercice_Monopolis.Models
+
+namespace Correction_Monopolis.Models
 {
     internal class Jeu
     {
-        #region Variables membre et propriétés
         private List<Joueur> _joueurs;
         private List<Case> _plateau;
 
         public Joueur[] Joueurs
         {
-            get { return _joueurs?.ToArray(); }
+            get
+            {
+                return _joueurs?.ToArray();
+            }
             /*private set
             {
                 _joueurs = new List<Joueur>(value);
             }*/
         }
-
         public Case[] Plateau
         {
             get
@@ -29,9 +31,7 @@ namespace Exercice_Monopolis.Models
                 return _plateau.ToArray();
             }
         }
-        #endregion
 
-        #region Indexeurs
         public Case this[int numeroCase]
         {
             get
@@ -41,11 +41,6 @@ namespace Exercice_Monopolis.Models
             }
         }
 
-        /// <summary>
-        /// Recherche d'un pion dans la liste de joueurs
-        /// </summary>
-        /// <param name="pion">le pion que l'on recherche</param>
-        /// <returns>Si un joueur existe avec le pion retourne le si non retourne null</returns>
         public Joueur? this[Pions pion]
         {
             get
@@ -58,21 +53,11 @@ namespace Exercice_Monopolis.Models
             }
         }
 
-        #endregion
-
-        //public Jeu(List<CasePropriete> casesPlateau)
-        //{
-        //    _joueurs = new List<Joueur>();
-        //    _plateau = casesPlateau;
-
-        //}
-
         public Jeu(Case[] casesPlateau)
         {
-            _joueurs = new List<Joueur>();
+            //_plateau = [.. casesPlateau]; //Initialise une list à partir d'un array
             _plateau = new List<Case>(casesPlateau);
-            // initialisation d'une liste à partir d'un array methode raccourcie
-            //_plateau = [.. casesPlateau];
+            _joueurs = new List<Joueur>();
         }
 
         public void AjouterJoueur(string nom, Pions pion)
@@ -87,6 +72,5 @@ namespace Exercice_Monopolis.Models
             }
             _joueurs.Add(new Joueur(nom, pion));
         }
-
     }
 }

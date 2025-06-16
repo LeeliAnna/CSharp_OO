@@ -49,14 +49,13 @@ namespace Exercice_Monopolis.Models
 
         public void AJouterVisiteur(Joueur visiteur) 
         {
-            if (!_visiteurs.Contains(visiteur)) _visiteurs.Add(visiteur);
-            else Console.WriteLine("Ce visiteur est déjà sur la case.");
+            if (_visiteurs.Contains(visiteur)) return; //Message d'erreur
+            _visiteurs.Add(visiteur);
         }
 
         public void RetirerVisiteur(Joueur visiteur) 
         {
-            if (_visiteurs.Contains(visiteur)) _visiteurs.Remove(visiteur);
-            else Console.WriteLine("Ce visiteur n'est pas sur la case.");
+            if (!_visiteurs.Remove(visiteur)) return; //Message exception
         }
 
     }

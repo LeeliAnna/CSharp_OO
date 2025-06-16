@@ -13,22 +13,26 @@ namespace Exercice_Monopolis
         static void Main(string[] args)
         {
             #region Initialisation du plateau
-            CasePropriete[] cases =
+            Case[] cases =
             {
+                new Case("Départ"),
+
                 new CasePropriete("Patio", Couleurs.Marron, 20),
                 new CasePropriete("Accueil", Couleurs.Marron, 23),
-
                 new CasePropriete("Ascenceur Gauche", Couleurs.BleuCiel, 26),
                 new CasePropriete("Ascenceur Droit", Couleurs.BleuCiel, 26),
                 new CasePropriete("Toilette RDC", Couleurs.BleuCiel, 30),
 
-                new CasePropriete("Couloir 4eme étage", Couleurs.Violet, 32),
-                new CasePropriete("Couloir 5eme étage", Couleurs.Violet, 32),
-                new CasePropriete("Toilettes 5eme étage", Couleurs.Violet, 32),
+                new Case("Prison"),
 
+                new CasePropriete("Couloir 4ième étage", Couleurs.Violet, 32),
+                new CasePropriete("Couloir 5ième étage", Couleurs.Violet, 32),
+                new CasePropriete("Toilette 5ième étage", Couleurs.Violet, 38),
                 new CasePropriete("Classe des WAD", Couleurs.Orange, 42),
                 new CasePropriete("Classe des WEB", Couleurs.Orange, 42),
                 new CasePropriete("Classe des Games", Couleurs.Orange, 48),
+
+                new Case("Parking Gratuit"),
 
                 new CasePropriete("Bureau Sonia", Couleurs.Bleu, 56),
                 new CasePropriete("Bureau Nicole", Couleurs.Bleu, 56),
@@ -93,7 +97,7 @@ namespace Exercice_Monopolis
             {
                 // permet de retrouver le joueur avec seulement des identifiants possibles
                 Joueur joueurCourant = monopily.Joueurs[tourJoueur % monopily.Joueurs.Length];
-                CasePropriete caseCourrante = monopily[joueurCourant.Position];
+                Case caseCourrante = monopily[joueurCourant.Position];
 
                 //Traitement du tour
                 Console.WriteLine($"Bonjour, je suis {joueurCourant.Nom}, je joue avec le pion {joueurCourant.Pion} et je me trouve en position {caseCourrante.Nom}.");

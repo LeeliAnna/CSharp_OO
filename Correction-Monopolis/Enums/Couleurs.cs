@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace Correction_Monopolis.Enums
 {
-    internal enum Pions
+    internal enum Couleurs
     {
-        Voiture,
-        Cuirasse,
-        Chien,
-        Chapeau,
-        Fer,
-        Dino,
-        DeACoudre,
-        Brouette,
-        Chaussure
+        Marron,
+        BleuCiel,
+        Violet,
+        Orange,
+        Rouge,
+        Jaune,
+        Vert,
+        Bleu
     }
 }
