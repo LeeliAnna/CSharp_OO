@@ -94,7 +94,6 @@ namespace Exercice_Monopolis.Models
                     Proprietaire = acheteur;
                 }
             }
-
         }
 
         private void Sejourner(Joueur visiteur)
@@ -109,7 +108,10 @@ namespace Exercice_Monopolis.Models
                 Acheter(visiteur);
             }else
             {
-                Sejourner(visiteur);
+                if (Proprietaire != visiteur)
+                {
+                    Sejourner(visiteur);
+                }
             }
         }
     }

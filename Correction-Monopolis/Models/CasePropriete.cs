@@ -64,7 +64,7 @@ namespace Correction_Monopolis.Models
             Proprietaire = null;
         }
 
-        public void Acheter(Joueur acheteur)
+        private void Acheter(Joueur acheteur)
         {
             //if(acheteur.Payer(Prix))
             // {
@@ -83,6 +83,35 @@ namespace Correction_Monopolis.Models
                     Proprietaire = acheteur;
                 }
             }
+        }
+
+        public override void Activer(Joueur visiteur)
+        {
+            if (Proprietaire is null)
+            {
+                //je dois acheter
+                //si j'ai argent
+                if(visiteur.Solde >= Prix)
+                {
+                    Acheter(visiteur);
+                }
+            }
+            else if (Proprietaire != visiteur)
+            {
+                Sejourner(visiteur);
+            }
+            // les tests a effectuer dans le else if
+            //test C#
+            //if (Proprietaire != visiteur)
+            // test business sans ID 
+            //if (visiteur.Proprietes.Contains(this))
+            
+        }
+
+        private void Sejourner(Joueur visiteur)
+        {
+            int droitSejour = this.Prix / 4;
+            visiteur.Payer(droitSejour);
         }
     }
 }

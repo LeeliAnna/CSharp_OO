@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Correction_Monopolis.Models
 {
-    internal class Case
+    internal abstract class Case
     {
         private List<Joueur> _visiteurs;
 
@@ -35,6 +35,9 @@ namespace Correction_Monopolis.Models
         {
             if (!_visiteurs.Remove(visiteur)) return;  //Message d'exception
         }
+
+        public abstract void Activer(Joueur visiteur);
+
 
 
     }

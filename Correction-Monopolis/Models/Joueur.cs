@@ -117,11 +117,13 @@ namespace Correction_Monopolis.Models
             return left;
         }
 
+        /*
         public static List<Case> operator +(Joueur left, CasePropriete right)
         {
             right.Acheter(left);
             left.AjouterPropriete(right);
             return left.Proprietes;
         }
+        */
     }
 }
